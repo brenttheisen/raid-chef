@@ -4,11 +4,14 @@ Configures software RAIDs using Linux's mdadm.
 
 ## Example
 
-Lets say you wanted to RAID 0 two block devices (`/dev/xvdf` and `/dev/xvdg`) in to one logical devicei (`/dev/md0`).
+Lets say you wanted to RAID 0 two block devices (`/dev/xvdf` and `/dev/xvdg`) in to one logical device (`/dev/md0`).
 Your Chef attributes might look like...
 
 ````json
 {
+  "run_list": [
+    "recipe[raid]"
+  ],
   "default_attributes": {
     "raid": {
       "devices": {
@@ -21,7 +24,7 @@ Your Chef attributes might look like...
 }
 ````
 
-From here you would need to format and mount /dev/md0. To accomplish that consider using the
+From here you would need to format and mount `/dev/md0`. To accomplish that consider using the
 [filesystem Chef cookbook](http://community.opscode.com/cookbooks/filesystem).
 
 ## Credits
