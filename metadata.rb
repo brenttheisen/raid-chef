@@ -1,0 +1,6 @@
+name             'raid'
+maintainer       'Womply'
+maintainer_email 'devs@womply.com'
+license          'All rights reserved'
+description      'Installs/Configures raid'
+version          '0.1.0'
